@@ -43,6 +43,12 @@ class FamilyStructure:
     def delete_member(self, id):
         self._members = [item for item in self._members if id != item['id']]
         return self._members
+    
+    def update_member(self, id, member):
+        for item in self._members:
+            if item['id'] == id:
+                item.update(member)
+                return self._members
        
     def get_member(self, id):
         # return a member with the given id
